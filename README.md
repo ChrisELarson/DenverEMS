@@ -3,7 +3,7 @@
 ## Table of Contents
 * [General info](#general-info)
 * [Packages](#packages)
-* [Data Gathering](#team info)
+* [Data Gathering](#team-info)
 
 ## General Info
 Analysis of 911 call volumes by hour
