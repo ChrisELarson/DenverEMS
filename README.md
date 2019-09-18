@@ -5,7 +5,7 @@
 * [Packages](#packages)
 * [Data Gathering](#data-gathering)
 * [Exploratory Analysis](#exploratory-analysis)
-    -[Summary Statistics](#summary-statistics)
+    - [Summary Statistics](#summary-statistics)
 * [Modeling](#modeling)
     - [GOF](#gof)
     - [Model selection](#model-selection)
