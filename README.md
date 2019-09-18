@@ -18,6 +18,7 @@ Project created in R with the following packages:
 * tidyverse: dplyr, ggplot2, tidyr, readr, tibble
 * lubridate  
 * MASS
+* data.table
 
 
 ## _Data Gathering_
