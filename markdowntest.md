@@ -3,7 +3,6 @@ title: "Test"
 output: 
   html_document:
     keep_md: true
-    pandoc_args: --webtex
 ---
 
 
