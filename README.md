@@ -4,6 +4,7 @@
 * [General info](#general-info)
 * [Packages](#packages)
 * [Data Gathering](#data-gathering)
+* [Data Cleaning](#data-cleaning)
 * [Exploratory Analysis](#exploratory-analysis)
     - [Summary Statistics](#summary-statistics)
 * [Modeling](#modeling)
@@ -19,6 +20,8 @@ Project created in R with the following packages:
 * lubridate  
 * MASS
 * data.table
+* odbc
+* Janitor
 
 
 ## _Data Gathering_
@@ -34,7 +37,9 @@ The data for Nuggets(NBA) home games was gathered by Jephte Guirree and received
 No Avalanche(NHL) data is currently used.
 
 ### Denver Health Paramedics call volumes
-Provided by Steve Hulac. **Put link to code here** Unfortunately access to locations (for any geospatial analysis) and response times was unable to be obtained.
+[Code](CAD_data_pull.R) for obtaining call volumes provided by Steve Hulac via the Denver Health Paramedic Division. Unfortunately access to locations (for any geospatial analysis) and response times were unable to be obtained.
+
+## _Data Cleaning_
 
 ## _Exploratory Analysis_
 
