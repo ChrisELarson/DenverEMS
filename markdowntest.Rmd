@@ -1,8 +1,8 @@
 ---
 title: "Test"
 output: 
-  github_document:
-    pandoc_args: --webtex
+  rmarkdown::github_document
+  
 ---
 
 ```{r setup, include=FALSE}
