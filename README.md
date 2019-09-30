@@ -24,7 +24,7 @@ Project created in R with the following packages:
 ## _Data Gathering_
 
 ### Weather Data
-Temperature data was taken from the [National Oceanic and Atmospheric Administration](https://www.ncei.noaa.gov/).  The weather recordings for temperature and precipitation at the Denver International Airport station were used. Code provided by Steve Hulac.  
+Temperature data was taken from the [National Oceanic and Atmospheric Administration](https://www.ncei.noaa.gov/).  The weather recordings for temperature and precipitation at the Denver International Airport station were used. [Code](Weather_data.R) provided by Steve Hulac.  
 
 ### Team Info
 The data for Broncos(NFL) and Rockies(MLB) games was taken from www.pro-football-refernce.com and www.baseball-reference.com respectively.  The code used to gather and clean the data can be found [here](https://github.com/ChrisELarson/DenverEMS/blob/master/TeamData.R).
