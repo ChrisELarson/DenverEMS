@@ -3,7 +3,11 @@
 ## _Table of Contents_
 * [General info](#general-info)
 * [R Packages](#r-packages)
-* [Data Gathering](#data-gathering)
+* [Data Collection](#data-collection)
+    -[Weather Data](#weather-data)
+    -[Team Info](#team-info)
+    -[Denver Health Paramedics Call Volumes](#denver-health-paramedics-call-volumes)
+    -[Merging and missing values](#merging-and-missing-values)
 * [Data Cleaning](#data-cleaning)
 * [Exploratory Analysis](#exploratory-analysis)
     - [Summary Statistics](#summary-statistics)
@@ -16,7 +20,7 @@ Analysis of 911 call volumes by hour for Denver Health Paramedics.  The only dat
 
 ## _R Packages_
 Project created in R with the following packages:
-* tidyverse: dplyr, ggplot2, tidyr, readr, tibble
+* tidyverse: dplyr, ggplot2, tidyr, readr, tibble, zoo
 * lubridate  
 * MASS
 * data.table
@@ -24,8 +28,8 @@ Project created in R with the following packages:
 * Janitor
 
 
-## _Data Gathering_
-[Here](all_variables.csv) is the final data set used in the project.  No access to some of the original, pre-cleaned data however the code used for gathering and cleaning provided where available.  Some variables in the data set were exploratory in nature and not used in any analysis.
+## _Data Collection_
+[Here](all_variables.csv) is the final data set used in the project.  No access to some of the original, pre-cleaned data; however the code used for gathering and cleaning provided where available.  Some variables in the data set were exploratory in nature and not used in any analysis.
 
 ### Weather Data
 Temperature data was taken from the [National Oceanic and Atmospheric Administration](https://www.ncei.noaa.gov/).  The weather recordings for temperature and precipitation at the Denver International Airport station were used. [Code](Weather_data.R) provided by Steve Hulac.  
@@ -40,7 +44,12 @@ No Avalanche(NHL) data is currently used.
 ### Denver Health Paramedics call volumes
 [Code](CAD_data_pull.R) for obtaining call volumes provided by Steve Hulac via the Denver Health Paramedic Division. Unfortunately access to locations (for any geospatial analysis) and response times were unable to be obtained.
 
+### Merging and missing values
+[Here]() is the code for compiling the various sources into one file, saved as a CSV.  After merging the data there were 402 missing values, all within the temperature and precipitation columns.  To deal with missing precipitation values we found it reasonable to use the last value carried forward. I.E. if there was rain the previous hour, the missing hour will be coded with precipitation.  For temperature, linear interpolation([Wiki](https://en.wikipedia.org/wiki/Linear_interpolation)) was used.  Code for imputing the missing values can be found [here]()
+
 ## _Data Cleaning_
+
+
 
 ## _Exploratory Analysis_
 Our main focus is on the volume of 911 calls in the city of Denver.
