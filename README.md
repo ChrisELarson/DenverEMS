@@ -25,6 +25,7 @@ Project created in R with the following packages:
 
 
 ## _Data Gathering_
+[Here]() is the final data set used in the project.  No access to some of the original, pre-cleaned data however the code used for gathering and cleaning provided where available.
 
 ### Weather Data
 Temperature data was taken from the [National Oceanic and Atmospheric Administration](https://www.ncei.noaa.gov/).  The weather recordings for temperature and precipitation at the Denver International Airport station were used. [Code](Weather_data.R) provided by Steve Hulac.  
