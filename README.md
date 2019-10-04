@@ -4,10 +4,10 @@
 * [General info](#general-info)
 * [R Packages](#r-packages)
 * [Data Collection](#data-collection)
-    -[Weather Data](#weather-data)
-    -[Team Info](#team-info)
-    -[Denver Health Paramedics Call Volumes](#denver-health-paramedics-call-volumes)
-    -[Merging and missing values](#merging-and-missing-values)
+    - [Weather Data](#weather-data)
+    - [Team Info](#team-info)
+    - [Denver Health Paramedics Call Volumes](#denver-health-paramedics-call-volumes)
+    - [Merging and missing values](#merging-and-missing-values)
 * [Data Cleaning](#data-cleaning)
 * [Exploratory Analysis](#exploratory-analysis)
     - [Summary Statistics](#summary-statistics)
@@ -45,7 +45,7 @@ No Avalanche(NHL) data is currently used.
 [Code](CAD_data_pull.R) for obtaining call volumes provided by Steve Hulac via the Denver Health Paramedic Division. Unfortunately access to locations (for any geospatial analysis) and response times were unable to be obtained.
 
 ### Merging and missing values
-[Here]() is the code for compiling the various sources into one file, saved as a CSV.  After merging the data there were 402 missing values, all within the temperature and precipitation columns.  To deal with missing precipitation values we found it reasonable to use the last value carried forward. I.E. if there was rain the previous hour, the missing hour will be coded with precipitation.  For temperature, linear interpolation([Wiki](https://en.wikipedia.org/wiki/Linear_interpolation)) was used.  Code for imputing the missing values can be found [here]()
+[Here](merging_data.R) is the code for compiling the various sources into one file, saved as a CSV.  After merging the data there were 402 missing values, all within the temperature and precipitation columns.  To deal with missing precipitation values we found it reasonable to use the last value carried forward. I.E. if there was rain the previous hour, the missing hour will be coded with precipitation.  For temperature, linear interpolation([Wiki](https://en.wikipedia.org/wiki/Linear_interpolation)) was used.  Code for imputing the missing values can be found [here](missing_values.R)
 
 ## _Data Cleaning_
 
