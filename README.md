@@ -54,7 +54,9 @@ For athletic events we used from one hour before until three hours after a home 
 
 
 ## _Exploratory Analysis_
-Our main focus is on the volume of 911 calls in the city of Denver.
+Our main focus is on the volume of 911 calls in the city of Denver. Analysis done in R using rmarkdown files.  [This](https://chriselarson.github.io/Test/) is site used to display.
+
+**Note** just testing link to another repo that is currently set up as a test
 
 ### Summary Statistics
 
