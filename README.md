@@ -20,7 +20,9 @@ Analysis of 911 call volumes by hour for Denver Health Paramedics.  The only dat
 
 ## _R Packages_
 Project created in R with the following packages:
-* tidyverse: dplyr, ggplot2, tidyr, readr, tibble, zoo
+* tidyverse
+* ggplot2
+* plotly
 * lubridate  
 * MASS
 * data.table
