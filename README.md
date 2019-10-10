@@ -55,7 +55,7 @@ For athletic events we used from one hour before until three hours after a home 
 [Here](merging_data.R) is the code for compiling the various sources into one file, saved as a CSV.  After merging the data there were 402 missing values, all within the temperature and precipitation columns.  To deal with missing precipitation values we found it reasonable to use the last value carried forward. I.E. if there was rain the previous hour, the missing hour will be coded with precipitation.  For temperature, linear interpolation([Wiki](https://en.wikipedia.org/wiki/Linear_interpolation)) was used.  Code for imputing the missing values can be found [here](missing_values.R).
 
 ### Formatting the data
-An .Rdata file was created from the combined CSV for this data set.  It can be downloaded [here](call_data.Rdata).  Variables were changed to proper types for further analysis with more conventional naming of the factors.  This [link]() is for the code written to create the data frame. 
+An .Rdata file was created from the combined CSV for this data set.  It can be downloaded [here](call_data.Rdata).  Variables were changed to proper types for further analysis with more conventional naming of the factors.  This [link](data_frame_creation.R) is for the code written to create the data frame. 
 
 ## _Exploratory Analysis_
 Our main focus is on the volume of 911 calls in the city of Denver. Analysis done in R using rmarkdown files.  [This](https://chriselarson.github.io/Test/) is site used to display.
