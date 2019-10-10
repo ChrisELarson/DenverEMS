@@ -1,4 +1,5 @@
-# Denver Paramedics call volumes
+# Denver Paramedics Call Volumes
+This is a collection of files and data sets used for a collaborative project analyzing the 911 call volumes of the Denver Health Paramedic Division using R statistical software.  All code in this repository written by myself unless otherwise noted.
 
 ## _Table of Contents_
 * [General info](#general-info)
@@ -7,8 +8,9 @@
     - [Weather Data](#weather-data)
     - [Team Info](#team-info)
     - [Denver Health Paramedics Call Volumes](#denver-health-paramedics-call-volumes)
+* [Data Preparation](#data-preparation)
     - [Merging and missing values](#merging-and-missing-values)
-* [Data Cleaning](#data-cleaning)
+    - [Data Formatting](#formatting-the-data)
 * [Exploratory Analysis](#exploratory-analysis)
     - [Summary Statistics](#summary-statistics)
 * [Modeling](#modeling)
@@ -31,29 +33,29 @@ Project created in R with the following packages:
 
 
 ## _Data Collection_
-[Here](all_variables.csv) is the final data set used in the project.  No access to some of the original, pre-cleaned data; however the code used for gathering and cleaning provided where available.  Some variables in the data set were exploratory in nature and not used in any analysis.
+[Here](all_variables.csv) is the final data set used for this project in CSV format.  No access to some of the original, pre-cleaned data; however the code used for gathering and cleaning provided where available.  Some variables in the data set were exploratory in nature and not used in any analysis.
 
 ### Weather Data
 Temperature data was taken from the [National Oceanic and Atmospheric Administration](https://www.ncei.noaa.gov/).  The weather recordings for temperature and precipitation at the Denver International Airport station were used. [Code](Weather_data.R) provided by Steve Hulac.  
 
 ### Team Info
-The data for Broncos(NFL) and Rockies(MLB) games was taken from www.pro-football-reference.com and www.baseball-reference.com respectively.  The code used to gather the data can be found [here](https://github.com/ChrisELarson/DenverEMS/blob/master/TeamData.R).  The actual start times were available for NFL games.  For MLB games they were simply broken into a day/night category.  Per (whatever source I can use here) day games routinely start at X:XX and night games start at X:XX.
+The data for Broncos(NFL) and Rockies(MLB) games was taken from www.pro-football-reference.com and www.baseball-reference.com respectively.  The code used to gather the data can be found [here](https://github.com/ChrisELarson/DenverEMS/blob/master/TeamData.R).  The actual start times were available for NFL games.  For MLB games they were simply broken into a day/night category.
 
 The data for Nuggets(NBA) home games was gathered by Jephte Guerrier and received from Kroenke Sports. The methods used for the creation of the Nuggets data are unavailable.
 
 No Avalanche(NHL) data is currently used.
 
-For athletic events we used from one hour before until three hours after a home game as our timeline.  This was in an attempt to capture any pre and post game festivites that could potentially lead to an increase in 911 calls and to help account for an influx of population during the event.
+For athletic events we used from one hour before until three hours after a home game as our timeline.  This was in an attempt to capture any pre and post game festivites that could potentially lead to an increase in 911 calls and to help account for any potential influx of population during the event.
 
 ### Denver Health Paramedics call volumes
 [Code](CAD_data_pull.R) for obtaining call volumes provided by Steve Hulac via the Denver Health Paramedic Division. Unfortunately access to locations (for any geospatial analysis) and response times were unable to be obtained.
 
+## _Data Preparation_
 ### Merging and missing values
 [Here](merging_data.R) is the code for compiling the various sources into one file, saved as a CSV.  After merging the data there were 402 missing values, all within the temperature and precipitation columns.  To deal with missing precipitation values we found it reasonable to use the last value carried forward. I.E. if there was rain the previous hour, the missing hour will be coded with precipitation.  For temperature, linear interpolation([Wiki](https://en.wikipedia.org/wiki/Linear_interpolation)) was used.  Code for imputing the missing values can be found [here](missing_values.R).
 
-## _Data Cleaning_
-
-
+### Formatting the data
+An .Rdata file was created from the combined CSV for this data set.  It can be downloaded [here](call_data.Rdata).  Variables were changed to proper types for further analysis with more conventional naming of the factors.  This [link]() is for the code written to create the data frame. 
 
 ## _Exploratory Analysis_
 Our main focus is on the volume of 911 calls in the city of Denver. Analysis done in R using rmarkdown files.  [This](https://chriselarson.github.io/Test/) is site used to display.
