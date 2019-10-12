@@ -1,6 +1,9 @@
 # Denver Paramedics Call Volumes
 This is a collection of files and data sets used for a collaborative project analyzing the 911 call volumes of the Denver Health Paramedic Division using R statistical software.  All code in this repository written by myself unless otherwise noted.
 
+### Website
+https://chriselarson.github.io/DenverEMS_rmd/ **Under Construction** with more visually appealing analysis and code examples
+
 ## _Table of Contents_
 * [General info](#general-info)
 * [R Packages](#r-packages)
@@ -11,8 +14,6 @@ This is a collection of files and data sets used for a collaborative project ana
 * [Data Preparation](#data-preparation)
     - [Merging and missing values](#merging-and-missing-values)
     - [Data Formatting](#formatting-the-data)
-* [Exploratory Analysis](#exploratory-analysis)
-    - [Summary Statistics](#summary-statistics)
 * [Modeling](#modeling)
     - [GOF](#gof)
     - [Model selection](#model-selection)
@@ -57,14 +58,8 @@ For athletic events we used from one hour before until three hours after a home 
 ### Formatting the data
 An .Rdata file was created from the combined CSV for this data set.  It can be downloaded [here](call_data.Rdata).  Variables were changed to proper types for further analysis with more conventional naming of the factors.  This [link](data_frame_creation.R) is for the code written to create the data frame. 
 
-## _Exploratory Analysis_
-Our main focus is on the volume of 911 calls in the city of Denver. Analysis done in R using rmarkdown files.  [This](https://chriselarson.github.io/Test/) is site used to display.
-
-**Note** just testing link to another repo that is currently set up as a test
-
-### Summary Statistics
-
 ## _Modeling_
+This section will include links to files used for the development and selection of a predictive model
 
 ### GOF
 
