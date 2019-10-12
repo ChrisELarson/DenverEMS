@@ -15,7 +15,7 @@ https://chriselarson.github.io/DenverEMS_rmd/ <br>
 * [Data Preparation](#data-preparation)
     - [Merging and missing values](#merging-and-missing-values)
     - [Data Formatting](#formatting-the-data)
-* [Downloadable Data Set](#final-data-set)
+* [Downloadable Data Set](#final-data-set-downloadable-in-csv-or-.rdata-format)
 * [Modeling](#modeling)
     - [GOF](#gof)
     - [Model selection](#model-selection)
@@ -60,7 +60,7 @@ For athletic events we used from one hour before until three hours after a home 
 ### Formatting the data
 An .Rdata file was created from the combined CSV for this data set.  It can be downloaded [here](call_data.Rdata).  Variables were changed to proper types for further analysis with more conventional naming of the factors.  This [link](data_frame_creation.R) is for the code written to create the data frame.
 
-#### __**Final Data Set**__: Downloadable in *[CSV](all_variables.csv)* or *[.RData](call_data.Rdata)* format
+#### Final Data Set: Downloadable in *[CSV](all_variables.csv)* or *[.RData](call_data.Rdata)* format
 
 ## _Modeling_
 This section will include links to files used for the development and selection of a predictive model
