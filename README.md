@@ -2,8 +2,8 @@
 This is a collection of files and data sets used for a collaborative project analyzing the 911 call volumes of the Denver Health Paramedic Division using R statistical software.  All code in this repository written by myself unless otherwise noted.
 
 ### Website
-https://chriselarson.github.io/DenverEMS_rmd/ 
-****Under Construction**** with more visually appealing analysis and code examples
+https://chriselarson.github.io/DenverEMS_rmd/ <br>
+**_Under Construction_** with more visually appealing analysis and code examples using rmarkdown files
 
 ## _Table of Contents_
 * [General info](#general-info)
@@ -15,6 +15,7 @@ https://chriselarson.github.io/DenverEMS_rmd/
 * [Data Preparation](#data-preparation)
     - [Merging and missing values](#merging-and-missing-values)
     - [Data Formatting](#formatting-the-data)
+* [Downloadable Data Set](#final-data-set)
 * [Modeling](#modeling)
     - [GOF](#gof)
     - [Model selection](#model-selection)
@@ -57,7 +58,9 @@ For athletic events we used from one hour before until three hours after a home 
 [Here](merging_data.R) is the code for compiling the various sources into one file, saved as a CSV.  After merging the data there were 402 missing values, all within the temperature and precipitation columns.  To deal with missing precipitation values we found it reasonable to use the last value carried forward. I.E. if there was rain the previous hour, the missing hour will be coded with precipitation.  For temperature, linear interpolation([Wiki](https://en.wikipedia.org/wiki/Linear_interpolation)) was used.  Code for imputing the missing values can be found [here](missing_values.R).
 
 ### Formatting the data
-An .Rdata file was created from the combined CSV for this data set.  It can be downloaded [here](call_data.Rdata).  Variables were changed to proper types for further analysis with more conventional naming of the factors.  This [link](data_frame_creation.R) is for the code written to create the data frame. 
+An .Rdata file was created from the combined CSV for this data set.  It can be downloaded [here](call_data.Rdata).  Variables were changed to proper types for further analysis with more conventional naming of the factors.  This [link](data_frame_creation.R) is for the code written to create the data frame.
+
+#### __**Final Data Set**__: Downloadable in *[CSV](all_variables.csv)* or *[.RData](call_data.Rdata)* format
 
 ## _Modeling_
 This section will include links to files used for the development and selection of a predictive model
