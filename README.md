@@ -15,7 +15,7 @@ https://chriselarson.github.io/DenverEMS_rmd/ <br>
 * [Data Preparation](#data-preparation)
     - [Merging and missing values](#merging-and-missing-values)
     - [Data Formatting](#formatting-the-data)
-* [Downloadable Data Set](#formatiing-the-data)
+* [Downloadable Data Set](#formatting-the-data)
 * [Modeling](#modeling)
     - [GOF](#gof)
     - [Model selection](#model-selection)
