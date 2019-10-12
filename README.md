@@ -2,7 +2,8 @@
 This is a collection of files and data sets used for a collaborative project analyzing the 911 call volumes of the Denver Health Paramedic Division using R statistical software.  All code in this repository written by myself unless otherwise noted.
 
 ### Website
-https://chriselarson.github.io/DenverEMS_rmd/ **Under Construction** with more visually appealing analysis and code examples
+https://chriselarson.github.io/DenverEMS_rmd/ 
+****Under Construction**** with more visually appealing analysis and code examples
 
 ## _Table of Contents_
 * [General info](#general-info)
