@@ -70,3 +70,4 @@ This section will include links to files used for the development and selection 
 
 ### Model Selection
 [File](fitting_volume_frequency.pdf) some intial goodness of fit tests, authored by Steve Hulac
+[File](Goodness_of_fit_tests.pdf) more goodness of fit tests, authored by Steve Hulac
