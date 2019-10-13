@@ -69,3 +69,4 @@ This section will include links to files used for the development and selection 
 [File](Call_Volume_Data_Exploration.pdf) for volume and temperature analysis, authored by Steve Hulac
 
 ### Model Selection
+[File](fitting_volume_frequency.pdf) some intial goodness of fit tests, authored by Steve Hulac
