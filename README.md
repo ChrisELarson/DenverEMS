@@ -1,5 +1,5 @@
 # Denver Paramedics Call Volumes
-This is a collection of files and data sets used for a collaborative project analyzing the 911 call volumes of the Denver Health Paramedic Division using R statistical software.  All code in this repository written by myself unless otherwise noted.
+This is a collection of files and data sets used for a collaborative project analyzing the 911 call volumes of the Denver Health Paramedic Division using R statistical software. All code in this repository written by myself unless otherwise noted.
 
 ### Website
 https://chriselarson.github.io/DenverEMS_rmd/ <br>
@@ -16,12 +16,12 @@ https://chriselarson.github.io/DenverEMS_rmd/ <br>
     - [Merging and missing values](#merging-and-missing-values)
     - [Data Formatting](#formatting-the-data)
 * [Downloadable Data Set](#formatting-the-data)
-* [Modeling](#modeling)
-    - [GOF](#gof)
+* [Modeling and Analysis](#modeling-and-analysis)
+    - [Volume Analysis](#volume-analysis)
     - [Model selection](#model-selection)
 
 ## _General Info_
-Analysis of 911 call volumes by hour for Denver Health Paramedics.  The only data available from the Denver Health Paramedics was a list of number of calls per each hour of the day from the years 2002 - 2018.  We decided to use the years 2011-2018 for analysis.  Partial data for the beginning months of 2019 are used for testing.(not sure I like this bit) For this project we want to analyize the volume of calls to help acurately set minimum staffing levels. The Denver Health Paramedic Division currently uses 10 hour shifts with staggered start times throughout the day, unfortunately without access to actual times (i.e. how long does a call take on average) a proper staffing recommendation will be difficult.  Further, we want to see if local professional sports teams home games or weather variations; temperature and precipitation, have any predictive power in the number of 911 calls in a given hour.
+Analysis of 911 call volumes by hour for Denver Health Paramedics.  The only data available from the Denver Health Paramedics was a list of number of calls per each hour of the day from the years 2002 - 2018.  We decided to use the years 2011-2018 for analysis. Partial data from 2019 is also available. For this project we want to analyize the volume of calls to help acurately set minimum staffing levels. The Denver Health Paramedic Division currently uses 10 hour shifts with staggered start times throughout the day, unfortunately without access to actual times (i.e. how long does a call take on average) a proper staffing recommendation will be difficult.  Call volumes can still be evaluated.  Further, we want to see if local professional sports teams home games or weather variations; temperature and precipitation, have any predictive power in the number of 911 calls in a given hour.
 
 ## _R Packages_
 Project created in R with the following packages:
@@ -62,9 +62,10 @@ An .Rdata file was created from the combined CSV for this data set.  It can be d
 
 #### Final Data Set: Downloadable in *[CSV](all_variables.csv)* or *[.RData](call_data.Rdata)* format
 
-## _Modeling_
-This section will include links to files used for the development and selection of a predictive model
+## _Modeling and Analysis_
+This section will include links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as html files, mostly written using Rmarkdown.  As many of the original source files are unavailable they are converted here to PDF files for easier visualization in github.  
 
-### GOF
+### Volume Analysis
+[File](Call Volume Data Exploration.pdf) for volume and temperature analysis, authored by Steve Hulac
 
 ### Model Selection
