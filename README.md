@@ -63,11 +63,18 @@ An .Rdata file was created from the combined CSV for this data set.  It can be d
 #### Final Data Set: Downloadable in *[CSV](all_variables.csv)* or *[.RData](call_data.Rdata)* format
 
 ## _Modeling and Analysis_
-This section will include links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as html files, mostly written using Rmarkdown.  As many of the original source files are unavailable they are converted here to PDF files for easier visualization in github.  
+This section will include links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as html files, mostly written using Rmarkdown. They are hopefully somewhat representative of our thought proccess and journey through this project. As many of the original source files are unavailable they are converted here to PDF files for easier visualization in github. 
 
 ### Volume Analysis
 [File](Call_Volume_Data_Exploration.pdf) for volume and temperature analysis, authored by Steve Hulac
 
 ### Model Selection
-[File](fitting_volume_frequency.pdf) some intial goodness of fit tests, authored by Steve Hulac
+As we were using count data our focus was on discrete distributions, namely poisson and negative binomial. <br><br>
+[File](fitting_volume_frequency.pdf) some intial goodness of fit tests, authored by Steve Hulac <br>
 [File](Goodness_of_fit_tests.pdf) more goodness of fit tests, authored by Steve Hulac
+
+## _Presentation Slides_
+This project was presented to classmates and math department professors.  
+
+### Further Development
+Potential ideas include outlier analysis for patterns in high volume hours.  For example are there routinely increased call volumes on certain holidays?  Explore time series analysis.
