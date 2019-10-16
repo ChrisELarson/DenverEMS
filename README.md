@@ -63,14 +63,14 @@ As we were using count data our focus was on discrete distributions, namely pois
 
 
 - __[File](fitting_volume_frequency.pdf)__: some intial goodness of fit tests for negative binomial and poisson, explored graphically. Authored by Steve Hulac.
-- [File](Goodness_of_fit_tests.pdf)- more goodness of fit tests with outlier filtering, authored by Steve Hulac.
-- [File](GOF.md)- some initial modeling attempts, no goodness of fit found.  Poisson, Quasi-poisson, Negative Binomial on unfiltered data.  [.Rmd file](GOF.rmd)
-- [File](poisson.md)- goodness of fit acheived with a poisson model using truncated data. [.Rmd file](poisson.rmd)
-- [File](trying.md)- clues leading towards negative binomial model selection. Density graphs.  Outliers examined, created data set containing only outliers.  [.Rmd file](trying.rmd)
+- __[File]__(Goodness_of_fit_tests.pdf): more goodness of fit tests with outlier filtering, authored by Steve Hulac.
+- __[File](GOF.md)__: some initial modeling attempts, no goodness of fit found.  Poisson, Quasi-poisson, Negative Binomial on unfiltered data.  [.Rmd file](GOF.rmd)
+- __[File](poisson.md)__: goodness of fit acheived with a poisson model using truncated data. [.Rmd file](poisson.rmd)
+- __[File](trying.md)__: clues leading towards negative binomial model selection. Density graphs.  Outliers examined, created data set containing only outliers.  [.Rmd file](trying.rmd)
 
 #### Cross Validation and Final Model
-- [File](34minus.md)- some initial cross validation and data filtering exploring possible models
-- [File](finalproject.R)- containing code for the final model.  Cross Validation, Stepwise selection,  Confidence Intervals and Incident Rate Ratios are included.  The majority of the output for this code is included in the [final write up](4290_project_paper.pdf) and/or the [slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0) for presentation.
+- __[File](34minus.md)__: some initial cross validation and data filtering exploring possible models
+- __[File](finalproject.R)__: containing code for the final model.  Cross Validation, Stepwise selection,  Confidence Intervals and Incident Rate Ratios are included.  The majority of the output for this code is included in the [final write up](4290_project_paper.pdf) and/or the [slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0) for presentation.
 
 ### Further Development
 Potential ideas include outlier analysis for patterns in high volume hours.  For example are there routinely increased call volumes on certain holidays?  Explore time series analysis.
