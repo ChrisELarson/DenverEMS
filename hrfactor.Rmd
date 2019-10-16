@@ -15,7 +15,7 @@ library(arm)
 ```
 
 ```{r}
-raw<- read.csv("C:\\Users\\Clars\\Downloads\\all_vars.csv")
+raw<- read.csv("C:/Users/ADMIN/Desktop/SlackFiles/all_vars.csv")
 
 #changing variables to factors
 cols<- c('broncos','rockies','nuggets','precip')

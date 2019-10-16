@@ -19,7 +19,7 @@ I haven't started going through the high end thats cut out in order to look for 
 
 ##Reading the raw
 ```{r}
-raw<- read.csv("C:\\Users\\Clars\\Downloads\\all_vars.csv")
+raw<- read.csv("C:\\Users\\ADMIN\\Desktop\\SlackFiles\\all_vars.csv")
 #Factoring Variables
 cols<- c('broncos','rockies','nuggets','precip')
   raw[,cols]<- data.frame(apply(raw[cols],2, as.factor))
