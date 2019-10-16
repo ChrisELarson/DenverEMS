@@ -6,7 +6,7 @@ This is a collection of files and data sets used for a collaborative project ana
 
 ### Website
 https://chriselarson.github.io/DenverEMS_rmd/ <br>
-**_Under Construction_** with more visually appealing analysis and code examples using rmarkdown files
+**_Under Construction_** More analysis of the data from this project with further coding examples.
 
 ## _Table of Contents_
 * [General info](#general-info)
@@ -66,18 +66,17 @@ An .Rdata file was created from the combined CSV for this data set.  It can be d
 #### Final Data Set: Downloadable in *[CSV](all_variables.csv)* or *[.RData](call_data.Rdata)* format
 
 ## _Modeling and Analysis_
-This section will include links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as html files, mostly written using Rmarkdown. They are hopefully somewhat representative of our thought proccess and journey through this project. As many of the original source files are unavailable they are converted here to PDF files for easier visualization in github. 
+This section will include links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as html files, mostly written using Rmarkdown. They are hopefully somewhat representative of our thought proccess and journey through this project. As many of the original source files are unavailable they are converted here to PDF files for easier visualization in github. The original files are uploaded where available as markdown documents with links to the original `.Rmd`.
 
 ### Volume Analysis
-[File](Call_Volume_Data_Exploration.pdf) for volume and temperature analysis, authored by Steve Hulac
-
+- [File](Call_Volume_Data_Exploration.pdf) for volume and temperature analysis, authored by Steve Hulac
+- Further analysis being developed for [website](https://chriselarson.github.io/DenverEMS_rmd/) deployment.
 ### Model Selection
-As we were using count data our focus was on discrete distributions, namely poisson and negative binomial. <br><br>
+As we were using count data our focus was on discrete distributions, namely poisson and negative binomial. Maniuplating the available data in order to find a good fitting model proved to be a challenge.  Numerous models and distributions were explored before concluding a negative binomial model would fit our data best.  We achieved good fitting models with both poisson and negative binomial models, however the negative binomial allowed us to keep all of the outliers in the analysis.  As a group we decided that keeping as many data points in the model as possible was preferable.<br>
+
+
 [File](fitting_volume_frequency.pdf) some intial goodness of fit tests, authored by Steve Hulac <br>
 [File](Goodness_of_fit_tests.pdf) more goodness of fit tests, authored by Steve Hulac
-
-## _Presentation Slides_
-This project was presented to classmates and math department professors.  
 
 ### Further Development
 Potential ideas include outlier analysis for patterns in high volume hours.  For example are there routinely increased call volumes on certain holidays?  Explore time series analysis.
