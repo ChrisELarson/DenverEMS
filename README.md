@@ -10,7 +10,6 @@ https://chriselarson.github.io/DenverEMS_rmd/ <br>
 
 ## _Table of Contents_
 * [General info](#general-info)
-* [R Packages](#r-packages)
 * [Data Collection](#data-collection)
     - [Weather Data](#weather-data)
     - [Team Info](#team-info)
@@ -22,21 +21,9 @@ https://chriselarson.github.io/DenverEMS_rmd/ <br>
 * [Modeling and Analysis](#modeling-and-analysis)
     - [Volume Analysis](#volume-analysis)
     - [Model selection](#model-selection)
-
+* [R Packages](#r-packages)
 ## _General Info_
 Analysis of 911 call volumes by hour for Denver Health Paramedics.  The only data available from the Denver Health Paramedics was a list of number of calls per each hour of the day from the years 2002 - 2018.  We decided to use the years 2011-2018 for analysis. Partial data from 2019 is also available. For this project we want to analyize the volume of calls to help acurately set minimum staffing levels. The Denver Health Paramedic Division currently uses 10 hour shifts with staggered start times throughout the day, unfortunately without access to actual times (i.e. how long does a call take on average) a proper staffing recommendation will be difficult, however  call volumes can still be evaluated.  Further, we want to see if local professional sports teams home games or weather variations; temperature and precipitation, have any predictive power in the number of 911 calls in a given hour.
-
-## _R Packages_
-Project created in R with the following packages:
-* tidyverse
-* ggplot2
-* plotly
-* lubridate  
-* MASS
-* data.table
-* odbc
-* Janitor
-
 
 ## _Data Collection_
 [Here](all_variables.csv) is the final data set used for this project in CSV format.  No access to some of the original, pre-cleaned data; however the code used for gathering and cleaning provided where available.  Some variables in the data set were exploratory in nature and not used in any analysis.
@@ -75,15 +62,26 @@ This section will include links to files used for the development and selection 
 As we were using count data our focus was on discrete distributions, namely poisson and negative binomial. Maniuplating the available data in order to find a good fitting model proved to be a challenge.  Numerous models and distributions were explored before concluding a negative binomial model would fit our data best.  We achieved good fitting models with both poisson and negative binomial models, however the negative binomial allowed us to keep all of the outliers in the analysis.  As a group we decided that keeping as many data points in the model as possible was preferable.<br>
 
 
-- [File](fitting_volume_frequency.pdf) some intial goodness of fit tests, authored by Steve Hulac.
-- [File](Goodness_of_fit_tests.pdf) more goodness of fit tests, authored by Steve Hulac.
-- [File](GOF.md) Some initial modeling attempts, no goodness of fit found.  Poisson, Quasi-poisson, Negative Binomial on unfiltered data.  [.Rmd file](GOF.rmd)
-- [File](poisson.md) Goodness of fit acheived with a poisson model using truncated data. [.Rmd file](poisson.rmd)
-- [File](trying.md) Clues leading towards negative binomial model selection.  Outliers examined, created data set containing only outliers.  [.Rmd file](trying.rmd)
+- [File](fitting_volume_frequency.pdf)- some intial goodness of fit tests for negative binomial and poisson, explored graphically. Authored by Steve Hulac.
+- [File](Goodness_of_fit_tests.pdf)- more goodness of fit tests with outlier filtering, authored by Steve Hulac.
+- [File](GOF.md)- some initial modeling attempts, no goodness of fit found.  Poisson, Quasi-poisson, Negative Binomial on unfiltered data.  [.Rmd file](GOF.rmd)
+- [File](poisson.md)- goodness of fit acheived with a poisson model using truncated data. [.Rmd file](poisson.rmd)
+- [File](trying.md)- clues leading towards negative binomial model selection. Density graphs.  Outliers examined, created data set containing only outliers.  [.Rmd file](trying.rmd)
 
 #### Cross Validation and Final Model
-- [File](34minus.md) with some initial cross validation and data filtering exploring possible models
-- [File](finalproject.R) containing code for the final model.  Cross Validation, Stepwise selection,  Confidence Intervals and Incident Rate Ratios are included.  The majority of the output for this code is included in the [final write up](4290_project_paper.pdf) and/or the [slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0) for presentation.
+- [File](34minus.md)- some initial cross validation and data filtering exploring possible models
+- [File](finalproject.R)- containing code for the final model.  Cross Validation, Stepwise selection,  Confidence Intervals and Incident Rate Ratios are included.  The majority of the output for this code is included in the [final write up](4290_project_paper.pdf) and/or the [slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0) for presentation.
 
 ### Further Development
 Potential ideas include outlier analysis for patterns in high volume hours.  For example are there routinely increased call volumes on certain holidays?  Explore time series analysis.
+
+## _R Packages_
+Project created in R with the following packages:
+* tidyverse: ggplot2, dplyr, tidyr, readr, purrr, tibble
+* lubridate  
+* MASS
+* data.table
+* odbc
+* Janitor
+* fitdistplus
+* caret
