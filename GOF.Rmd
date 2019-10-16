@@ -19,7 +19,7 @@ Libraries used: tidyverse, lubridate, AER, MASS, sandwich, arm
 
 Probably don't need to change date as I don't use it as a variable..more for merging purposes.  Should probably format the wday to Sun, Mon etc. instead of 1-7
 ```{r}
-raw<- read.csv("C:\\Users\\Clars\\Downloads\\all_vars.csv")
+raw<- read.csv("C:/Users/ADMIN/Desktop/SlackFiles/all_vars.csv")
 
 #changing variables to factors
 cols<- c('broncos','rockies','nuggets','precip')
