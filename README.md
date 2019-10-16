@@ -62,7 +62,7 @@ This section will include links to files used for the development and selection 
 As we were using count data our focus was on discrete distributions, namely poisson and negative binomial. Maniuplating the available data in order to find a good fitting model proved to be a challenge.  Numerous models and distributions were explored before concluding a negative binomial model would fit our data best.  We achieved good fitting models with both poisson and negative binomial models, however the negative binomial allowed us to keep all of the outliers in the analysis.  As a group we decided that keeping as many data points in the model as possible was preferable.<br>
 
 
-- `[File](fitting_volume_frequency.pdf)`- some intial goodness of fit tests for negative binomial and poisson, explored graphically. Authored by Steve Hulac.
+- __[File](fitting_volume_frequency.pdf)__: some intial goodness of fit tests for negative binomial and poisson, explored graphically. Authored by Steve Hulac.
 - [File](Goodness_of_fit_tests.pdf)- more goodness of fit tests with outlier filtering, authored by Steve Hulac.
 - [File](GOF.md)- some initial modeling attempts, no goodness of fit found.  Poisson, Quasi-poisson, Negative Binomial on unfiltered data.  [.Rmd file](GOF.rmd)
 - [File](poisson.md)- goodness of fit acheived with a poisson model using truncated data. [.Rmd file](poisson.rmd)
