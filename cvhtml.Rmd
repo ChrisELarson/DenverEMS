@@ -1,0 +1,35 @@
+---
+title: "CV"
+author: "Larson"
+output: github_document
+---
+All Variables:  Full Model
+```{r}
+
+train_control<- trainControl(method = 'cv', number = 10)
+
+nb1<-train(n ~ Year+Hour+wday+pick+Temp+precip+
+             broncos+rockies+nuggets,
+           data = quant,
+           trControl = train_control,
+           method = 'glm.nb')
+print(nb1)
+```
+Model with selected variables:
+
+```{r}
+nb2<-train(n ~ Year+hr_index+pick+M_Th+Fri+
+             Temp+precip+
+             broncos+rockies+nuggets,
+           data = quant,
+           trControl = train_control,
+           method = 'glm.nb')
+print(nb2)
+```
+Base Model: calls and hour index only
+```{r}
+nb3<-train(n ~ hr_index,
+           data = quant,
+           trControl = train_control,
+           method = 'glm.nb')
+print(nb3)

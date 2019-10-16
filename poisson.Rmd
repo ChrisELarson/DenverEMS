@@ -1,0 +1,88 @@
+---
+title: "Something Maybe"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(MASS)
+library(lubridate)
+library(AER)
+```
+
+I've been messing with all sorts of models...finally got one that actually fits poisson.  Got there by trimming the top and bottom 2.5%.  Not sure how right that feels but it works.  
+
+The low end doesn't bother me at all, you could just suggest never have less than X ambulances on for any hour.
+
+I haven't started going through the high end thats cut out in order to look for some patterns there.
+
+##Reading the raw
+```{r}
+raw<- read.csv("C:\\Users\\Clars\\Downloads\\all_vars.csv")
+#Factoring Variables
+cols<- c('broncos','rockies','nuggets','precip')
+  raw[,cols]<- data.frame(apply(raw[cols],2, as.factor))
+   raw$wday<-as.factor(raw$wday)
+    levels(raw$wday)<- c('Sun','Mon','Tues','Wed','Thurs',
+                         'Fri','Sat')
+   raw$Hour<-as.factor(raw$Hour)
+   raw$Month<-as.factor(raw$Month)
+ 
+    levels(raw$Month)<-c('Jan','Feb','Mar','Apr','May','Jun',
+                         'Jul','Aug','Sep','Oct','Nov','Dec')
+levels(raw$precip)<-c('F','T')
+levels(raw$nuggets)<-c('n','y')
+levels(raw$broncos)<-c('n','y')
+levels(raw$rockies)<-c('n','y')
+
+sapply(raw, function(x) sum(is.na(x)))
+
+
+# This bit estimates for the missing values 
+#'last observed carried forward' for precip
+# linear interpolation for Temp
+raw<- raw %>%  
+    mutate(precip = na.locf(precip)) %>% 
+  mutate(Temp = na.approx(Temp))
+
+
+```
+
+
+The Quantiles:
+```{r}
+cbind(quantile(raw$n, 0.025), quantile(raw$n, 0.975))
+
+quant<- raw %>% 
+  #filter(n <= quantile(n, 0.975) & n > quantile(n, 0.025))
+filter(n >=3) 
+#filter(n <= 28)
+
+max(quant$n)
+min(quant$n)
+```
+
+##Poisson
+```{r}
+modelp<-glm(n ~ Year+Hour+Month+wday+pick+Temp+precip+
+                     broncos+rockies+nuggets, data = quant, 
+             family = 'poisson')
+modelnb<- glm.nb(n ~ Year+Hour+Month+wday+pick+Temp+precip+
+                     broncos+rockies+nuggets, data = quant)
+summary(modelp)
+```
+Note that "pick" gives NA because its perfectly correlated with month...wouldn't include both
+
+##Dispersion
+```{r}
+dispersiontest(modelp)
+```
+Good...pretty damn close to 1 (where it should be for poisson)
+
+##Goodness of fit
+```{r}
+with(modelnb, cbind(res.deviance = deviance, df = df.residual, 
+                     p = pchisq(deviance, df.residual, lower.tail = F)))
+```
+Doesn't suggest poisson is no good

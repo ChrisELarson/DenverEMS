@@ -1,0 +1,33 @@
+---
+title: "High End Filtered 34+"
+author: "Larson"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(caret)
+library(tidyverse)
+library(lubridate)
+
+
+filtered<- read.csv("C:\\Users\\Clars\\Downloads\\all_vars_28_apr_2.csv")
+ filtered$Hour<- as.factor(filtered$Hour)
+ 
+
+ filtered<- filtered %>% 
+   filter(n <= 34)
+
+```
+High Filtered:  There are only 9 data points with n greater than or equal to 34
+```{r}
+train_control<- trainControl(method = 'cv', number = 10)
+
+nb1<-train(n ~ Year + Hour + Temp + precip +
+            broncos + rockies + nuggets +
+            Spring + Summer + M_Th + Fri,
+           data = filtered,
+           trControl = train_control,
+           method = 'glm.nb')
+print(nb1)
+```
