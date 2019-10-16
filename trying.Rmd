@@ -17,7 +17,7 @@ Libraries used: tidyverse, lubridate, AER, MASS, sandwich, arm, fitdistrplus
 
 Reading in the data
 ```{r}
-raw<- read.csv("C:\\Users\\Clars\\Downloads\\all_vars.csv")
+raw<- read.csv("C:/Users/ADMIN/Desktop/SlackFiles/all_vars.csv")
 #Factoring Variables
 cols<- c('broncos','rockies','nuggets','precip')
   raw[,cols]<- data.frame(apply(raw[cols],2, as.factor))
@@ -86,6 +86,7 @@ boxplot(calls$n, horizontal = T)
 ##Distribution of Response variable n
 
 ```{r fitplus}
+#library(fitdistrplus)
 Calls.Poi<- fitdist(calls$n, "pois")
 Calls.NB<- fitdist(calls$n, "nbinom")
 
