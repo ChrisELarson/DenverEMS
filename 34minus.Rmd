@@ -1,6 +1,5 @@
 ---
 title: "High End Filtered 34+"
-author: "Larson"
 output: github_document
 ---
 
@@ -11,7 +10,7 @@ library(tidyverse)
 library(lubridate)
 
 
-filtered<- read.csv("C:\\Users\\Clars\\Downloads\\all_vars_28_apr_2.csv")
+filtered<- read.csv("C:/Users/ADMIN/Desktop/SlackFiles/all_vars_28_apr_2.csv")
  filtered$Hour<- as.factor(filtered$Hour)
  
 
