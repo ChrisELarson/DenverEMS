@@ -1,0 +1,101 @@
+---
+title: "Still Trying"
+output: github_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(lubridate)
+library(AER) #dispersion test
+library(MASS) #NegBin
+library(sandwich) #robust SE
+library(arm)
+library(fitdistrplus)
+```
+Libraries used: tidyverse, lubridate, AER, MASS, sandwich, arm, fitdistrplus
+
+Reading in the data
+```{r}
+raw<- read.csv("C:\\Users\\Clars\\Downloads\\all_vars.csv")
+#Factoring Variables
+cols<- c('broncos','rockies','nuggets','precip')
+  raw[,cols]<- data.frame(apply(raw[cols],2, as.factor))
+   raw$wday<-as.factor(raw$wday)
+    levels(raw$wday)<- c('Sun','Mon','Tues','Wed','Thurs',
+                         'Fri','Sat')
+   raw$Hour<-as.factor(raw$Hour)
+   raw$Month<-as.factor(raw$Month)
+    levels(raw$Month)<-c('Jan','Feb','Mar','Apr','May','Jun',
+                         'Jul','Aug','Sep','Oct','Nov','Dec')
+levels(raw$precip)<-c('F','T')
+levels(raw$nuggets)<-c('n','y')
+levels(raw$broncos)<-c('n','y')
+levels(raw$rockies)<-c('n','y')
+```
+
+
+##Outliers
+
+Graph of Outliers
+```{r}
+out<-ggplot(data = raw, mapping = aes(x=" ", y = n))+
+  geom_boxplot(outlier.color = "red", outlier.shape = 1)+
+  ggtitle(expression(atop("Outliers For Number of Calls",
+                          atop(italic("outliers in red at 1.5 IQR")))))+
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(plot.subtitle = element_text(hjust = 0.5))
+out + coord_flip()
+```
+
+Viewing value and Location of Outliers
+```{r}
+outliers = boxplot(raw$n, plot = F)$out
+            which(raw$n %in% outliers)
+print(outliers)
+min(outliers)
+table(outliers)
+```
+
+
+Creating new Data frame of just Outliers for further analysis. 
+```{r}
+CallOutliers<-raw[which(raw$n %in% outliers),]
+CallOutliers
+```
+ie there are multilple New Years days on a quick glance.  Could look for patterns in the outliers to suggest days where more staffing is needed etc.
+
+Removing Outliers to attempt better model fit
+```{r}
+calls<- raw %>% 
+   mutate(Date = ymd_hms(raw$Date)) %>%  
+  filter(n < 28 & n > 0)
+```
+I removed 0 as well, not only to help try and fit a better model but as far as any staffing recommendations there will never be 0 ambulances as a rec
+
+##Outliers Filtered
+
+quick view of data
+```{r}
+par(mfrow = c(2,2))
+hist(calls$n, main = "No Outliers", xlab= 'Calls', xlim = c(1,28))
+hist(raw$n, main = 'Outliers', xlab = 'Calls')
+boxplot(calls$n, horizontal = T)
+```
+
+##Distribution of Response variable n
+
+```{r fitplus}
+Calls.Poi<- fitdist(calls$n, "pois")
+Calls.NB<- fitdist(calls$n, "nbinom")
+
+denscomp(list(Calls.Poi, Calls.NB),
+         legendtext = c('Poisson','NegBin'),fitlty = 1)
+cdfcomp(list(Calls.Poi, Calls.NB),
+         legendtext = c('Poisson','NegBin'),fitlty = 1)
+```
+GOF
+```{r}
+gofstat(list(Calls.Poi, Calls.NB),
+        fitnames = c('Poisson','NegBin'))
+```

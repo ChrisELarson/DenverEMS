@@ -1,0 +1,89 @@
+---
+title: "redo"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(lubridate)
+library(AER) #dispersion test
+library(MASS) #NegBin
+library(sandwich) #robust SE
+library(arm)
+```
+
+```{r}
+raw<- read.csv("C:\\Users\\Clars\\Downloads\\all_vars.csv")
+
+#changing variables to factors
+cols<- c('broncos','rockies','nuggets','precip')
+  raw[,cols]<- data.frame(apply(raw[cols],2, as.factor))
+   raw$wday<-as.factor(raw$wday)
+   raw$Hour<-as.factor(raw$Hour)
+calls<- raw %>% 
+   mutate(Date = ymd_hms(raw$Date))
+```
+
+Poisson
+
+```{r}
+callsp<- glm(n ~ Year+Hour+Month+yday+wday+pick+Temp+precip+broncos+rockies+nuggets, data = calls, 
+             family = 'poisson')
+  summary(callsp)
+```
+GOF
+```{r, echo=F}
+  with(callsp, cbind(res.deviance = deviance, df = df.residual, 
+                     p = pchisq(deviance, df.residual, lower.tail = F)))
+```
+
+QPoisson:
+```{r}
+callsqp<- glm(n ~ Year+Hour+Month+yday+wday+pick+Temp+precip+broncos+rockies+nuggets, data = calls,
+              family = 'quasipoisson')
+ summary(callsqp)
+```
+
+NegBin:
+```{r}
+callsnb<- glm.nb(n ~ Year+Hour+Month+wday+pick+Temp+precip+broncos+rockies+nuggets, data = calls)
+  summary(callsnb)
+```
+GOF:
+```{r, echo=F}
+with(callsnb, cbind(res.deviance = deviance, df = df.residual, 
+                     p = pchisq(deviance, df.residual, lower.tail = F)))
+```
+Graph
+```{r}
+
+callsNA = na.omit(calls)  #omits 402 rows of Temperature Data
+
+nb<-glm.nb(n ~ Year+Hour+Month+yday+wday+pick+Temp+precip+broncos+rockies+nuggets, data = callsNA)  
+ xb <- predict(nb)
+  g <- cut(xb, breaks=quantile(xb,seq(0,100,5)/100))
+  m <- tapply(callsNA$n, g, mean)
+  v <- tapply(callsNA$n, g, var)
+
+pr<-residuals(callsqp, 'pearson')
+o <- sum(pr^2)/df.residual(callsqp)
+  
+plot(m, v, xlab="Mean", ylab="Variance", 
+        main="Mean-Variance Relationship")
+
+x<- seq(4, 17, .02)
+z<- nb$theta
+  
+  lines(x, x*o, lty="dashed")
+  lines(x, x*(1+x/z))
+  
+   legend("topleft", lty=c("dashed","solid"), 
+             legend=c("Q. Poisson","Neg. Binom."), inset=0.05)
+```
+
+
+
+
+
