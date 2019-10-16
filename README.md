@@ -78,5 +78,9 @@ As we were using count data our focus was on discrete distributions, namely pois
 [File](fitting_volume_frequency.pdf) some intial goodness of fit tests, authored by Steve Hulac <br>
 [File](Goodness_of_fit_tests.pdf) more goodness of fit tests, authored by Steve Hulac
 
+#### Cross Validation and Final Model
+- [File](34minus.md) with some initial cross validation and data filtering exploring possible models
+- [File](FinalProject.R) containing code for the final model.  Cross Validation, Stepwise selection,  Confidence Intervals are included.  The majority of the output for this code is included in the [final write up](4290_project_paper.pdf) and/or the [slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0) for presentation.
+
 ### Further Development
 Potential ideas include outlier analysis for patterns in high volume hours.  For example are there routinely increased call volumes on certain holidays?  Explore time series analysis.
