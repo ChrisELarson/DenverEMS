@@ -56,7 +56,7 @@ An .Rdata file was created from the combined CSV for this data set.  It can be d
 This section will include links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as html files, mostly written using Rmarkdown. They are hopefully somewhat representative of our thought proccess and journey through this project. As many of the original source files are unavailable they are converted here to PDF files for easier visualization in github. The original files are uploaded where available as markdown documents with links to the original `.Rmd`.
 
 ### Volume Analysis
-- ![File button](C:\Users\ADMIN\Desktop\buttons\button_file.png)[File](Call_Volume_Data_Exploration.pdf) for volume and temperature analysis, authored by Steve Hulac
+- [File](Call_Volume_Data_Exploration.pdf) for volume and temperature analysis, authored by Steve Hulac
 - Further analysis being developed for [website](https://chriselarson.github.io/DenverEMS_rmd/) deployment.
 ### Model Selection
 As we were using count data our focus was on discrete distributions, namely poisson and negative binomial. Maniuplating the available data in order to find a good fitting model proved to be a challenge.  Numerous models and distributions were explored before concluding a negative binomial model would fit our data best.  We achieved good fitting models with both poisson and negative binomial models, however the negative binomial allowed us to keep all of the outliers in the analysis.  As a group we decided that keeping as many data points in the model as possible was preferable.<br>
