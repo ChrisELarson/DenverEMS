@@ -8,7 +8,7 @@ This is a collection of files and data sets used for a collaborative project ana
 https://chriselarson.github.io/DenverEMS_rmd/ <br>
 **_Under Construction_** More analysis of the data from this project with further coding examples.
 
-## _Table of Contents_
+## Table of Contents
 * [General info](#general-info)
 * [Data Collection](#data-collection)
     - [Weather Data](#weather-data)
@@ -30,7 +30,7 @@ Analysis of 911 call volumes by hour for Denver Health Paramedics.  The only dat
 ---
 [Here](all_variables.csv) is the final data set used for this project in CSV format.  No access to some of the original, pre-cleaned data; however the code used for gathering and cleaning provided where available.  Some variables in the data set were exploratory in nature and not used in any analysis.
 
-### _Weather Data_
+### Weather Data
 Temperature data was taken from the [National Oceanic and Atmospheric Administration](https://www.ncei.noaa.gov/).  The weather recordings for temperature and precipitation at the Denver International Airport station were used. [Code](Weather_data.R) provided by Steve Hulac.  
 
 ### Team Info
@@ -50,14 +50,14 @@ For athletic events we used from one hour before until three hours after a home 
 ### Merging and missing values
 [Here](merging_data.R) is the code for compiling the various sources into one file, saved as a CSV.  After merging the data there were 402 missing values, all within the temperature and precipitation columns.  To deal with missing precipitation values we found it reasonable to use the last value carried forward. I.E. if there was rain the previous hour, the missing hour will be coded with precipitation.  For temperature, linear interpolation([Wiki](https://en.wikipedia.org/wiki/Linear_interpolation)) was used.  Code for imputing the missing values can be found [here](missing_values.R).
 
-### Formatting the data
+### Data Formatting
 An .Rdata file was created from the combined CSV for this data set.  It can be downloaded [here](call_data.Rdata).  Variables were changed to proper types for further analysis with more conventional naming of the factors.  This [link](data_frame_creation.R) is for the code written to create the data frame.
 
 #### Final Data Set: Downloadable in *[CSV](all_variables.csv)* or *[.RData](call_data.Rdata)* format
 
 ## Modeling and Analysis
 ---
-This section will include links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as html files, mostly written using Rmarkdown. They are hopefully somewhat representative of our thought proccess and journey through this project. As many of the original source files are unavailable they are converted here to PDF files for easier visualization in github. The original files are uploaded where available as markdown documents with links to the original `.Rmd`.
+This section will include links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as html files, mostly written using Rmarkdown. They are hopefully somewhat representative of our thought proccess and journey through this project. The original files are uploaded where available as markdown documents with links to the original `.Rmd`.  Where the original source files are unavailable they are converted here to PDF files for easier visualization in github. 
 
 ### Volume Analysis
 - [File](Call_Volume_Data_Exploration.pdf) for volume and temperature analysis, authored by Steve Hulac
@@ -77,7 +77,7 @@ As we were using count data our focus was on discrete distributions, namely pois
 - __[File](finalproject.R)__: containing code for the final model.  Cross Validation, Stepwise selection,  Confidence Intervals and Incident Rate Ratios are included.  The majority of the output for this code is included in the [final write up](4290_project_paper.pdf) and/or the [slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0) for presentation.
 
 ### Further Development
-Potential ideas include outlier analysis for patterns in high volume hours.  For example are there routinely increased call volumes on certain holidays?  Explore time series analysis.
+Potential ideas include outlier analysis for patterns in high volume hours.  For example are there routinely increased call volumes on certain holidays?  Time series analysis.
 
 ## _R Packages_
 Project created in R with the following packages:
