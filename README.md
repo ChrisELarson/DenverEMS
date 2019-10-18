@@ -22,10 +22,12 @@ https://chriselarson.github.io/DenverEMS_rmd/ <br>
     - [Volume Analysis](#volume-analysis)
     - [Model selection](#model-selection)
 * [R Packages](#r-packages)
-## _General Info_
+## General Info
+---
 Analysis of 911 call volumes by hour for Denver Health Paramedics.  The only data available from the Denver Health Paramedics was a list of number of calls per each hour of the day from the years 2002 - 2018.  We decided to use the years 2011-2018 for analysis. Partial data from 2019 is also available. For this project we want to analyize the volume of calls to help acurately set minimum staffing levels. The Denver Health Paramedic Division currently uses 10 hour shifts with staggered start times throughout the day, unfortunately without access to actual times (i.e. how long does a call take on average) a proper staffing recommendation will be difficult, however  call volumes can still be evaluated.  Further, we want to see if local professional sports teams home games or weather variations; temperature and precipitation, have any predictive power in the number of 911 calls in a given hour.
 
-## _Data Collection_
+## Data Collection
+---
 [Here](all_variables.csv) is the final data set used for this project in CSV format.  No access to some of the original, pre-cleaned data; however the code used for gathering and cleaning provided where available.  Some variables in the data set were exploratory in nature and not used in any analysis.
 
 ### Weather Data
@@ -43,7 +45,8 @@ For athletic events we used from one hour before until three hours after a home 
 ### Denver Health Paramedics call volumes
 [Code](CAD_data_pull.R) for obtaining call volumes provided by Steve Hulac via the Denver Health Paramedic Division. Unfortunately access to locations (for any geospatial analysis) and response times were unable to be obtained.
 
-## _Data Preparation_
+## Data Preparation
+---
 ### Merging and missing values
 [Here](merging_data.R) is the code for compiling the various sources into one file, saved as a CSV.  After merging the data there were 402 missing values, all within the temperature and precipitation columns.  To deal with missing precipitation values we found it reasonable to use the last value carried forward. I.E. if there was rain the previous hour, the missing hour will be coded with precipitation.  For temperature, linear interpolation([Wiki](https://en.wikipedia.org/wiki/Linear_interpolation)) was used.  Code for imputing the missing values can be found [here](missing_values.R).
 
@@ -52,7 +55,8 @@ An .Rdata file was created from the combined CSV for this data set.  It can be d
 
 #### Final Data Set: Downloadable in *[CSV](all_variables.csv)* or *[.RData](call_data.Rdata)* format
 
-## _Modeling and Analysis_
+## Modeling and Analysis
+---
 This section will include links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as html files, mostly written using Rmarkdown. They are hopefully somewhat representative of our thought proccess and journey through this project. As many of the original source files are unavailable they are converted here to PDF files for easier visualization in github. The original files are uploaded where available as markdown documents with links to the original `.Rmd`.
 
 ### Volume Analysis
