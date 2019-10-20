@@ -1,13 +1,13 @@
 # Denver Paramedics Call Volumes
 This is a collection of files and data sets used for a collaborative project analyzing the 911 call volumes of the Denver Health Paramedic Division using R statistical software. All code in this repository written by myself unless otherwise noted.
 
-- [![slides](Buttons/button_pdf.png)](4290_project_paper.pdf)Project write up 
-- The slides for presentation can be viewed [HERE](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0) as google slides.
-
-[PDF](4290_project_paper.pdf) or [google docs]
+- Project write up as [PDF](4290_project_paper.pdf) or [google docs](https://docs.google.com/document/d/1LJyybxZWOSdklGorLDOCAo2dna9N-69BUY3RhuEw31k/edit#heading=h.o6pbv0p4cgu9) online.
+- The slides for presentation can be viewed as [google slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0).
 
 
-(https://docs.google.com/document/d/1LJyybxZWOSdklGorLDOCAo2dna9N-69BUY3RhuEw31k/edit#heading=h.o6pbv0p4cgu9) online.
+[![slides](Buttons/button_pdf.png)](4290_project_paper.pdf)  
+
+
 
 ### Website
 https://chriselarson.github.io/DenverEMS_rmd/ <br>
