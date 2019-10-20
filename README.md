@@ -69,7 +69,7 @@ An .Rdata file was created from the combined CSV file for this data set.  Variab
 
 #### Final Data Set
 Downloadable in `CSV` or `.Rdata`<br>
-[![csv](Buttons/csv_button.png)](all_variable.csv)  [![rdata](Buttons/button_rdata.png)](call_data.Rdata)
+[![csv](Buttons/csv_button.png)](all_variables.csv)  [![rdata](Buttons/button_rdata.png)](call_data.Rdata)
 
 ## Modeling and Analysis
 ---
