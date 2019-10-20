@@ -8,7 +8,6 @@ This is a collection of files and data sets used for a collaborative project ana
 [![projectpdf](Buttons/button_pdf.png)](4290_project_paper.pdf)  [![slides](Buttons/google_slides.png)](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0)
 
 
-
 ### Website
 https://chriselarson.github.io/DenverEMS_rmd/ <br>
 **_Under Construction_** More analysis of the data from this project with further coding examples.
@@ -27,6 +26,7 @@ https://chriselarson.github.io/DenverEMS_rmd/ <br>
     - [Volume Analysis](#volume-analysis)
     - [Model selection](#model-selection)
 * [R Packages](#r-packages)
+
 ## General Info
 ---
 Analysis of 911 call volumes by hour for Denver Health Paramedics.  The only data available from the Denver Health Paramedics was a list of number of calls per each hour of the day from the years 2002 - 2018.  We decided to use the years 2011-2018 for analysis. Partial data from 2019 is also available. For this project we want to analyize the volume of calls to help acurately set minimum staffing levels. The Denver Health Paramedic Division currently uses 10 hour shifts with staggered start times throughout the day, unfortunately without access to actual times (i.e. how long does a call take on average) a proper staffing recommendation will be difficult, however  call volumes can still be evaluated.  Further, we want to see if local professional sports teams home games or weather variations; temperature and precipitation, have any predictive power in the number of 911 calls in a given hour.
@@ -69,7 +69,9 @@ An .Rdata file was created from the combined CSV file for this data set.  It can
 
 -  Creating a formatted data set.<br>[![df](Buttons/button_r-code.png)](data_frame_creation.R)
 
-#### Final Data Set: Downloadable in *[CSV](all_variables.csv)* or *[.RData](call_data.Rdata)* format
+#### Final Data Set
+Downloadable in `CSV` or `.Rdata`<br>
+[![csv](Buttons/csv_button.png)](all_variable.csv)  [![rdata](Buttons/button_rdata.png)](call_data.Rdata)
 
 ## Modeling and Analysis
 ---
