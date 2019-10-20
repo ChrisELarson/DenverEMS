@@ -36,8 +36,9 @@ Analysis of 911 call volumes by hour for Denver Health Paramedics.  The only dat
 [Here](all_variables.csv) is the final data set used for this project in CSV format.  No access to some of the original, pre-cleaned data; however the code used for gathering and cleaning provided where available.  Some variables in the data set were exploratory in nature and not used in any analysis.
 
 ### Weather Data
-Temperature data was taken from the [National Oceanic and Atmospheric Administration](https://www.ncei.noaa.gov/).  The weather recordings for temperature and precipitation at the Denver International Airport station were used. [Code](Weather_data.R) provided by Steve Hulac. <br>
-[![weather](Buttons/button_r-code.png)](Weather_data.R)
+Temperature data was taken from the [National Oceanic and Atmospheric Administration](https://www.ncei.noaa.gov/).  The weather recordings for temperature and precipitation at the Denver International Airport station were used. [Code](Weather_data.R) provided by Steve Hulac.
+
+[![weather](Buttons/button_r-code.png)](Weather_data.R) provided by Steve Hulac.
 
 ### Team Info
 The data for Broncos(NFL) and Rockies(MLB) games was taken from www.pro-football-reference.com and www.baseball-reference.com respectively.  The code used to gather the data can be found [here](https://github.com/ChrisELarson/DenverEMS/blob/master/TeamData.R).  The actual start times were available for NFL games.  For MLB games they were simply broken into a day/night category.
