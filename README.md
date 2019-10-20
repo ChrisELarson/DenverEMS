@@ -87,15 +87,15 @@ As we were using count data our focus was on discrete distributions, namely pois
 - More goodness of fit tests with outlier filtering, authored by Steve Hulac.<br>
 [![fit1](Buttons/pdf_button.png)](Goodness_of_fit_tests.pdf)
 - Initial modeling attempts, no goodness of fit found.  Poisson, Quasi-poisson, Negative Binomial on unfiltered data.<br>
-[![gof](Buttons/button_md.png)](GOF.md)  [![gof2](Buttons/button_rmd.png)](GOF.rmd)
+[![gof](Buttons/button_md.png)](GOF.md)  [![gof2](Buttons/button_rmd.png)](GOF.Rmd)
 - Goodness of fit acheived with a poisson model using truncated data.<br>
-[![poisson](Buttons/button_md.png)](poisson.md)  [![poisson1](Buttons/button_rmd.png)](poisson.rmd)
+[![poisson](Buttons/button_md.png)](poisson.md)  [![poisson1](Buttons/button_rmd.png)](poisson.Rmd)
 - Clues leading towards negative binomial model selection. Density graphs.  Outliers examined, created data set containing only outliers.<br>
-[![try](Buttons/button_md.png)](trying.md)  [![try1](Buttons/button_rmd.png)](trying.rmd)
+[![try](Buttons/button_md.png)](trying.md)  [![try1](Buttons/button_rmd.png)](trying.Rmd)
 
 #### Cross Validation and Final Model
 - Initial cross validation and data filtering exploring possible models.<br>
-[![cross](Buttons/button_md.png)](34minus.md)
+[![cross](Buttons/button_md.png)](34minus.md) [![cross1](Buttons/button_rmd.png)](34minus.Rmd)
 - Building the final model used.  Cross Validation, Stepwise selection,  Confidence Intervals and Incident Rate Ratios are included.  The majority of the output for this code is included in the [final write up](4290_project_paper.pdf) and/or the [slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0) for presentation.<br>
 [![final](Buttons/button_r-code.png)](finalproject.R)
 
