@@ -1,12 +1,10 @@
-# Denver Paramedics Call Volumes
-This is a collection of files and data sets used for a collaborative project analyzing the 911 call volumes of the Denver Health Paramedic Division using R statistical software. All code in this repository written by myself unless otherwise noted.
+# Denver Health Paramedics Call Volumes
+This is a collection of files and the final data set used for a collaborative project analyzing the 911 call volumes of the Denver Health Paramedic Division using R statistical software.  All code in this repository written by myself unless otherwise noted.
 
 - Project write up as [PDF](4290_project_paper.pdf) or [google docs](https://docs.google.com/document/d/1LJyybxZWOSdklGorLDOCAo2dna9N-69BUY3RhuEw31k/edit#heading=h.o6pbv0p4cgu9) online.
 - The slides for presentation can be viewed as [google slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0).
 
-
 [![projectpdf](Buttons/button_pdf.png)](4290_project_paper.pdf)  [![slides](Buttons/google_slides.png)](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0)
-
 
 ### Website
 https://chriselarson.github.io/DenverEMS_rmd/ <br>
@@ -29,7 +27,7 @@ https://chriselarson.github.io/DenverEMS_rmd/ <br>
 
 ## General Info
 ---
-Analysis of 911 call volumes by hour for Denver Health Paramedics.  The only data available from the Denver Health Paramedics was a list of number of calls per each hour of the day from the years 2002 - 2018.  We decided to use the years 2011-2018 for analysis. Partial data from 2019 is also available. For this project we want to analyize the volume of calls to help acurately set minimum staffing levels. The Denver Health Paramedic Division currently uses 10 hour shifts with staggered start times throughout the day, unfortunately without access to actual times (i.e. how long does a call take on average) a proper staffing recommendation will be difficult, however  call volumes can still be evaluated.  Further, we want to see if local professional sports teams home games or weather variations; temperature and precipitation, have any predictive power in the number of 911 calls in a given hour.
+Analysis of 911 call volumes by hour for the Denver Health Paramedics.  The only data available from the Denver Health Paramedics was a list of number of calls per each hour of the day from the years 2002 - 2018.  We decided to use the years 2011-2018 for analysis. Partial data from 2019 is also available. For this project we want to analyize the volume of calls to help acurately set minimum staffing levels. The Denver Health Paramedic Division currently uses 10 hour shifts with staggered start times throughout the day, unfortunately without access to actual times (i.e. how long does a call take on average) a proper staffing recommendation will be difficult, however call volumes can still be evaluated.  Further, we want to see if local professional sports teams home games or weather variations; temperature and precipitation, have any predictive power in the number of 911 calls in a given hour.
 
 ## Data Collection
 ---
@@ -65,7 +63,7 @@ All the data was combined into a single data set.  After merging the data there 
 - Imputing missing values.<br>[![impute](Buttons/button_r-code.png)](missing_values.R)
 
 ### Data Formatting
-An .Rdata file was created from the combined CSV file for this data set.  It can be downloaded [here](call_data.Rdata).  Variables were changed to proper types for further analysis with more conventional naming of the factors.
+An .Rdata file was created from the combined CSV file for this data set.  Variables were changed to proper types for further analysis with more conventional naming of the factors.
 
 -  Creating a formatted data set.<br>[![df](Buttons/button_r-code.png)](data_frame_creation.R)
 
@@ -75,7 +73,7 @@ Downloadable in `CSV` or `.Rdata`<br>
 
 ## Modeling and Analysis
 ---
-This section will include links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as html files, mostly written using Rmarkdown. They are hopefully somewhat representative of our thought proccess and journey through this project. The original files are uploaded where available as `markdown` documents for viewing in github. Links to the original `.Rmd` file provided where available.  Where the original source files are unavailable they are converted here to `PDF` files for easier visualization in github. 
+This section includes links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as `.html` files, mostly written using `Rmarkdown`. They are hopefully somewhat representative of our thought proccess and journey through this project. The original files are uploaded where available as `markdown` documents for viewing in github. Links to the original `.Rmd` file provided where available.  Where the original source files are unavailable they are converted here to `PDF` files for easier visualization in github. 
 
 ### Volume Analysis
 - Volume and temperature analysis, authored by Steve Hulac.<br>
