@@ -33,15 +33,15 @@ Analysis of 911 call volumes by hour for Denver Health Paramedics.  The only dat
 
 ## Data Collection
 ---
-[Here](all_variables.csv) is the final data set used for this project in CSV format.  No access to some of the original, pre-cleaned data; however the code used for gathering and cleaning provided where available.  Some variables in the data set were exploratory in nature and not used in any analysis.
+Data was gathered from various websites and the computer aided dispatch (CAD) system from the Denver Health Paramedics. No access to some of the original, pre-cleaned data; however the code used for gathering and cleaning the data is provided where available.
 
 ### Weather Data
-Temperature data was taken from the [National Oceanic and Atmospheric Administration](https://www.ncei.noaa.gov/).  The weather recordings for temperature and precipitation at the Denver International Airport station were used. [Code](Weather_data.R) provided by Steve Hulac.
+Temperature data was taken from the [National Oceanic and Atmospheric Administration](https://www.ncei.noaa.gov/).  The weather recordings for temperature and precipitation at the Denver International Airport station were used.
 
 [![weather](Buttons/button_r-code.png)](Weather_data.R) provided by Steve Hulac.
 
 ### Team Info
-The data for Broncos(NFL) and Rockies(MLB) games was taken from www.pro-football-reference.com and www.baseball-reference.com respectively.  The code used to gather the data can be found [here](https://github.com/ChrisELarson/DenverEMS/blob/master/TeamData.R).  The actual start times were available for NFL games.  For MLB games they were simply broken into a day/night category.
+The data for Broncos(NFL) and Rockies(MLB) games was taken from www.pro-football-reference.com and www.baseball-reference.com respectively.  The actual start times were available for NFL games.  For MLB games they were simply broken into a day/night category.
 
 The data for Nuggets(NBA) home games was gathered by Jephte Guerrier and received from Kroenke Sports. The methods used for the creation of the Nuggets data are unavailable.
 
@@ -49,16 +49,25 @@ No Avalanche(NHL) data is currently used.
 
 For athletic events we used from one hour before until three hours after a home game as our timeline.  This was in an attempt to capture any pre and post game festivites that could potentially lead to an increase in 911 calls and to help account for any potential influx of population during the event.
 
+[![teams](Buttons/button_r-code.png)](https://github.com/ChrisELarson/DenverEMS/blob/master/TeamData.R)
+
 ### Denver Health Paramedics call volumes
-[Code](CAD_data_pull.R) for obtaining call volumes provided by Steve Hulac via the Denver Health Paramedic Division. Unfortunately access to locations (for any geospatial analysis) and response times were unable to be obtained.
+CAD data from the Denver Health Paramedic Division. The data was collected as a sum of 911 calls in the city of Denver within an hour period. Unfortunately access to locations (for any geospatial analysis) or response times were unable to be obtained.
+
+[![cad](Buttons/button_r-code.png)](CAD_data_pull.R) provided by Steve Hulac
 
 ## Data Preparation
 ---
 ### Merging and missing values
-[Here](merging_data.R) is the code for compiling the various sources into one file, saved as a CSV.  After merging the data there were 402 missing values, all within the temperature and precipitation columns.  To deal with missing precipitation values we found it reasonable to use the last value carried forward. I.E. if there was rain the previous hour, the missing hour will be coded with precipitation.  For temperature, linear interpolation([Wiki](https://en.wikipedia.org/wiki/Linear_interpolation)) was used.  Code for imputing the missing values can be found [here](missing_values.R).
+All the data was combined into a single data set.  After merging the data there were 402 missing values, all within the temperature and precipitation columns.  To deal with missing precipitation values we found it reasonable to use the last value carried forward. I.E. if there was rain the previous hour, the missing hour will be coded with precipitation.  For temperature, linear interpolation([Wiki](https://en.wikipedia.org/wiki/Linear_interpolation)) was used.  
+
+- Combining the data sets.<br>[![merge](Buttons/button_r-code.png)](merging_data.R)
+- Imputing missing values.<br>[![impute](Buttons/button_r-code.png)](missing_values.R)
 
 ### Data Formatting
-An .Rdata file was created from the combined CSV for this data set.  It can be downloaded [here](call_data.Rdata).  Variables were changed to proper types for further analysis with more conventional naming of the factors.  This [link](data_frame_creation.R) is for the code written to create the data frame.
+An .Rdata file was created from the combined CSV file for this data set.  It can be downloaded [here](call_data.Rdata).  Variables were changed to proper types for further analysis with more conventional naming of the factors.
+
+-  Creating a formatted data set.<br>[![df](Buttons/button_r-code.png)](data_frame_creation.R)
 
 #### Final Data Set: Downloadable in *[CSV](all_variables.csv)* or *[.RData](call_data.Rdata)* format
 
@@ -67,7 +76,8 @@ An .Rdata file was created from the combined CSV for this data set.  It can be d
 This section will include links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as html files, mostly written using Rmarkdown. They are hopefully somewhat representative of our thought proccess and journey through this project. The original files are uploaded where available as `markdown` documents for viewing in github. Links to the original `.Rmd` file provided where available.  Where the original source files are unavailable they are converted here to `PDF` files for easier visualization in github. 
 
 ### Volume Analysis
-- [File](Call_Volume_Data_Exploration.pdf) for volume and temperature analysis, authored by Steve Hulac
+- Volume and temperature analysis, authored by Steve Hulac.<br>
+[![explore](Buttons/pdf_button.png)](Call_Volume_Data_Exploration.pdf)
 - Further analysis being developed for [website](https://chriselarson.github.io/DenverEMS_rmd/) deployment.
 ### Model Selection
 As we were using count data our focus was on discrete distributions, namely poisson and negative binomial. Maniuplating the available data in order to find a good fitting model proved to be a challenge.  Numerous models and distributions were explored before concluding a negative binomial model would fit our data best.  We achieved good fitting models with both poisson and negative binomial models, however the negative binomial allowed us to keep all of the outliers in the analysis.  As a group we decided that keeping as many data points in the model as possible was preferable.<br>
@@ -85,8 +95,11 @@ As we were using count data our focus was on discrete distributions, namely pois
 [![try](Buttons/button_md.png)](trying.md)  [![try1](Buttons/button_rmd.png)](trying.rmd)
 
 #### Cross Validation and Final Model
-- __[File](34minus.md)__: some initial cross validation and data filtering exploring possible models
-- __[File](finalproject.R)__: containing code for the final model.  Cross Validation, Stepwise selection,  Confidence Intervals and Incident Rate Ratios are included.  The majority of the output for this code is included in the [final write up](4290_project_paper.pdf) and/or the [slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0) for presentation.
+- Initial cross validation and data filtering exploring possible models.<br>
+[![cross](Buttons/button_md.png)](34minus.md)
+- Building the final model used.  Cross Validation, Stepwise selection,  Confidence Intervals and Incident Rate Ratios are included.  The majority of the output for this code is included in the [final write up](4290_project_paper.pdf) and/or the [slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0) for presentation.
+
+[![final](Buttons/button_r-code.png)](finalproject.R)
 
 ### Further Development
 Potential ideas include outlier analysis for patterns in high volume hours.  For example are there routinely increased call volumes on certain holidays?  Time series analysis.
