@@ -4,7 +4,7 @@ This is a collection of files and data sets used for a collaborative project ana
 - Write up for the project as [PDF](4290_project_paper.pdf) or [google docs](https://docs.google.com/document/d/1LJyybxZWOSdklGorLDOCAo2dna9N-69BUY3RhuEw31k/edit#heading=h.o6pbv0p4cgu9) online.
 - The slides for presentation can be viewed [HERE](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0) as google slides.
 
-[![slides](Buttons/button_google-slides (1).png)](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0)
+[![slides](Buttons/pdf_button.png)](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0)
 
 ### Website
 https://chriselarson.github.io/DenverEMS_rmd/ <br>
