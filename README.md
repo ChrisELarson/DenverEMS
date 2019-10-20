@@ -5,7 +5,7 @@ This is a collection of files and data sets used for a collaborative project ana
 - The slides for presentation can be viewed as [google slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0).
 
 
-[![slides](Buttons/button_pdf.png)](4290_project_paper.pdf)  
+[![projectpdf](Buttons/button_pdf.png)](4290_project_paper.pdf)  [![slides](Buttons/google_slides.png)](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0)
 
 
 
