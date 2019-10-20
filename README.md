@@ -79,9 +79,8 @@ This section will include links to files used for the development and selection 
 - Volume and temperature analysis, authored by Steve Hulac.<br>
 [![explore](Buttons/pdf_button.png)](Call_Volume_Data_Exploration.pdf)
 - Further analysis being developed for [website](https://chriselarson.github.io/DenverEMS_rmd/) deployment.
-### Model Selection
+### __Model Selection__
 As we were using count data our focus was on discrete distributions, namely poisson and negative binomial. Maniuplating the available data in order to find a good fitting model proved to be a challenge.  Numerous models and distributions were explored before concluding a negative binomial model would fit our data best.  We achieved good fitting models with both poisson and negative binomial models, however the negative binomial allowed us to keep all of the outliers in the analysis.  As a group we decided that keeping as many data points in the model as possible was preferable.<br>
-
 
 - Intial goodness of fit tests for negative binomial and poisson, explored graphically. Authored by Steve Hulac.<br>
 [![fit](Buttons/pdf_button.png)](fitting_volume_frequency.pdf)
