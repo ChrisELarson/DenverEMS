@@ -77,8 +77,10 @@ As we were using count data our focus was on discrete distributions, namely pois
 - __[File](Goodness_of_fit_tests.pdf)__: more goodness of fit tests with outlier filtering, authored by Steve Hulac.
 - Initial modeling attempts, no goodness of fit found.  Poisson, Quasi-poisson, Negative Binomial on unfiltered data.<br>
 [![gof](Buttons/button_md.png)](GOF.md)  [![gof2](Buttons/button_rmd.png)](GOF.rmd)
-- __[File](poisson.md)__: goodness of fit acheived with a poisson model using truncated data. [.Rmd file](poisson.rmd)
-- __[File](trying.md)__: clues leading towards negative binomial model selection. Density graphs.  Outliers examined, created data set containing only outliers.  [.Rmd file](trying.rmd)
+- Goodness of fit acheived with a poisson model using truncated data.<br>
+[![poisson](Buttons/button_md.png)](poisson.md)  [![poisson1](Buttons/button_rmd.png)](poisson.rmd)
+- Clues leading towards negative binomial model selection. Density graphs.  Outliers examined, created data set containing only outliers.<br>
+[![try](Buttons/button_md.png)](trying.md)  [![try1](Buttons/button_rmd.png)](trying.rmd)
 
 #### Cross Validation and Final Model
 - __[File](34minus.md)__: some initial cross validation and data filtering exploring possible models
