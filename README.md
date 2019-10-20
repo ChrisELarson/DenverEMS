@@ -64,7 +64,7 @@ An .Rdata file was created from the combined CSV for this data set.  It can be d
 
 ## Modeling and Analysis
 ---
-This section will include links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as html files, mostly written using Rmarkdown. They are hopefully somewhat representative of our thought proccess and journey through this project. The original files are uploaded where available as markdown documents with links to the original `.Rmd`.  Where the original source files are unavailable they are converted here to PDF files for easier visualization in github. 
+This section will include links to files used for the development and selection of a predictive model.  Many of these files were shared between collaborators as html files, mostly written using Rmarkdown. They are hopefully somewhat representative of our thought proccess and journey through this project. The original files are uploaded where available as `markdown` documents for viewing in github. Links to the original `.Rmd` file provided where available.  Where the original source files are unavailable they are converted here to `PDF` files for easier visualization in github. 
 
 ### Volume Analysis
 - [File](Call_Volume_Data_Exploration.pdf) for volume and temperature analysis, authored by Steve Hulac
@@ -75,7 +75,8 @@ As we were using count data our focus was on discrete distributions, namely pois
 
 - **_[File](fitting_volume_frequency.pdf)_**: some intial goodness of fit tests for negative binomial and poisson, explored graphically. Authored by Steve Hulac.
 - __[File](Goodness_of_fit_tests.pdf)__: more goodness of fit tests with outlier filtering, authored by Steve Hulac.
-- __[File](GOF.md)__: some initial modeling attempts, no goodness of fit found.  Poisson, Quasi-poisson, Negative Binomial on unfiltered data.  [.Rmd file](GOF.rmd)
+- Initial modeling attempts, no goodness of fit found.  Poisson, Quasi-poisson, Negative Binomial on unfiltered data.<br>
+[![gof](Buttons/button_md.png)](GOF.md)  [![gof2](Buttons/button_rmd.png)](GOF.rmd)
 - __[File](poisson.md)__: goodness of fit acheived with a poisson model using truncated data. [.Rmd file](poisson.rmd)
 - __[File](trying.md)__: clues leading towards negative binomial model selection. Density graphs.  Outliers examined, created data set containing only outliers.  [.Rmd file](trying.rmd)
 
