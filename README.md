@@ -97,8 +97,7 @@ As we were using count data our focus was on discrete distributions, namely pois
 #### Cross Validation and Final Model
 - Initial cross validation and data filtering exploring possible models.<br>
 [![cross](Buttons/button_md.png)](34minus.md)
-- Building the final model used.  Cross Validation, Stepwise selection,  Confidence Intervals and Incident Rate Ratios are included.  The majority of the output for this code is included in the [final write up](4290_project_paper.pdf) and/or the [slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0) for presentation.
-
+- Building the final model used.  Cross Validation, Stepwise selection,  Confidence Intervals and Incident Rate Ratios are included.  The majority of the output for this code is included in the [final write up](4290_project_paper.pdf) and/or the [slides](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0) for presentation.<br>
 [![final](Buttons/button_r-code.png)](finalproject.R)
 
 ### Further Development
