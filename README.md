@@ -6,9 +6,8 @@ This is a collection of files and the final data set used for a collaborative pr
 
 [![projectpdf](Buttons/button_pdf.png)](4290_project_paper.pdf)  [![slides](Buttons/google_slides.png)](https://docs.google.com/presentation/d/1LP_FYMX9VJ-Oj_LOLcNiBZ4EOkV0bjGEULO3EL_9HI4/edit#slide=id.g59b92fdf11_1_0)
 
-### Website
-https://chriselarson.github.io/DenverEMS_rmd/ <br>
-**_Under Construction_** More analysis of the data from this project with further coding examples.
+**Website**: https://chriselarson.github.io/DenverEMS_rmd/ <br>
+Expansion of data analysis not included in the original project.  Additional code examples and write up.  Project data is used, further development planned.
 
 ## Table of Contents
 * [General info](#general-info)
