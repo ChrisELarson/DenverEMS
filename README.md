@@ -58,7 +58,7 @@ CAD data from the Denver Health Paramedic Division. The data was collected as a 
 ### Merging and missing values
 All the data was combined into a single data set.  After merging the data there were 402 missing values, all within the temperature and precipitation columns.  To deal with missing precipitation values we found it reasonable to use the last value carried forward. I.E. if there was rain the previous hour, the missing hour will be coded with precipitation.  For temperature, linear interpolation([Wiki](https://en.wikipedia.org/wiki/Linear_interpolation)) was used.  
 
-- Combining the data sets.<br>[![merge](Buttons/button_r-code.png)](merging_data.R) provided by Steve Hulac
+- Combining the data sets, provided by Steve Hulac.<br>[![merge](Buttons/button_r-code.png)](merging_data.R) 
 - Imputing missing values.<br>[![impute](Buttons/button_r-code.png)](missing_values.R)
 
 ### Data Formatting
