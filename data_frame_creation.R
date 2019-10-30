@@ -33,13 +33,13 @@ levels(call_data$Month) <- c('Jan', 'Feb', 'Mar', 'Apr',
 call_data$Hour <- as.factor(call_data$Hour) #factor 0 - 23
 call_data$Year <- as.factor(call_data$Year)
 
-# Converting Celcius to Farienheit
-c_to_f <- function(temp) {
-  farienheit <- ((temp * (9/5)) + 32)
-  return(farienheit)
-}
+# Converting Celcius to Farienheit, need to check temp import before converting 
+#c_to_f <- function(temp) {
+#  farienheit <- ((temp * (9/5)) + 32)
+#  return(farienheit)
+#}
 
-call_data$Temp <- c_to_f(call_data$Temp)
+#call_data$Temp <- c_to_f(call_data$Temp)
 
 # Convert Date from character to date variable
 call_data$Date <- ymd_hms(call_data$Date, tz = 'MST')
